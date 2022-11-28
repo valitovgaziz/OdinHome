@@ -17,15 +17,13 @@ class listFragment : Fragment() {
     lateinit var binding: FragmentListBinding
     lateinit var viewModel: ListFragmentViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentListBinding.inflate(inflater)
         viewModel = ViewModelProvider(requireActivity())[ListFragmentViewModel::class.java]
-
         return binding.root
     }
 
@@ -42,6 +40,4 @@ class listFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_listFragment_to_editFragment)
         }
     }
-
-
 }
